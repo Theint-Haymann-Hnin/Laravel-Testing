@@ -23,10 +23,13 @@
             <td>{{$product->name}}</td>
             <td>{{$product->detail}}</td>
             <td>
-                <form>
+                <form action="{{ route('products.destroy',$product->id) }}" method="POST"> 
+                    @csrf
+                    @method('DELETE')
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
                     <a class="btn btn-primary">Edit</a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i
+                     class="fa fa-trash"></i>Delete</button>
                 </form>
             </td>
         </tr>
