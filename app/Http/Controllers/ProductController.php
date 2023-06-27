@@ -81,7 +81,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'name' => 'required',
+            'detail' => 'required',
+        ]);
+        
+        Product::findOrFail($id)->update($request->all());
+        return redirect()->route('products.index')
+                        ->with('success','Product updated successfully.');
+
     }
 
     /**
@@ -93,6 +102,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
        $product =Product::find($id)->delete();
-       return back()->with('success','Product deleted successfully.');
+       return back()->with('danger','Product deleted successfully.');
     }
 }

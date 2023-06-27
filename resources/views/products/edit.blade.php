@@ -1,7 +1,8 @@
 @extends('products.layout')
 @section('content')
-<form action="" method="POST">
+<form action="{{ route('products.update',$product->id) }}" method="POST">
     @csrf
+    @method('PUT')
      <div class="row mt-5">
         <div class="col-xs-12 col-sm-12 col-md-12">
         <h5>Edit Page</h5>

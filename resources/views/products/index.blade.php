@@ -10,6 +10,9 @@
 @if ($message = Session::get('success'))
             <p class="mt-2 mb-2 alert alert-success">{{ $message }}</p>
 @endif
+@if ($message = Session::get('danger'))
+            <p class="mt-2 mb-2 alert alert-danger">{{ $message }}</p>
+@endif
 <table class="table table-bordered">
         <tr>
             <th>No</th>
