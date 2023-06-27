@@ -24,8 +24,7 @@
             <td>{{$product->detail}}</td>
             <td>
                 <form>
-   
-                    <a class="btn btn-info">Show</a>
+                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
                     <a class="btn btn-primary">Edit</a>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
