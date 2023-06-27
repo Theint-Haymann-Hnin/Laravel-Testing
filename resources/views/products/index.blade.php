@@ -27,7 +27,7 @@
                     @csrf
                     @method('DELETE')
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
-                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i
                      class="fa fa-trash"></i>Delete</button>
                 </form>

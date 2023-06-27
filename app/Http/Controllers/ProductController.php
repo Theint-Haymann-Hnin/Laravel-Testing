@@ -67,8 +67,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $product= Product::find($id);
+        return view('products.edit',compact('product'));
     }
 
     /**
